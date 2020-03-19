@@ -44,3 +44,4 @@ Add to github also
 git remote add github git@github.com:kes-laksirif/my-node-cicd-docker.git
 git push -u github master
 ```
+Note: This worked
