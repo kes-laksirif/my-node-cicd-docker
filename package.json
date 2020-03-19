@@ -1,0 +1,18 @@
+{
+  "name": "my-node-cicd-docker",
+  "version": "1.0.0",
+  "description": "Node app which support cicd and docker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@192.168.137.86:my-node-cicd-docker.git"
+  },
+  "author": "Laksiri Fernando",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
