@@ -39,3 +39,8 @@ git commit -m "Initial commit"
 git push -u origin master
 ```
 
+Add to github also
+```
+git remote add github git@github.com:kes-laksirif/my-node-cicd-docker.git
+git push -u github master
+```
