@@ -7,8 +7,8 @@ helloWorldMessage = message.helloWorldMessage();
 
 describe('Message', function(){
     describe ('helloMessage', function () {
-        it('helloMessage should return Hello', function() {
-            assert.equal(helloMessage, 'Hello');
+        it('helloMessage should return Hello!', function() {
+            assert.equal(helloMessage, 'Hello!');
         });
         it('helloMessage should return string', function() {
             assert.typeOf(helloMessage, 'string');
