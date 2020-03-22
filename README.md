@@ -83,3 +83,88 @@ Now the node application is running in the docker and accessible via
 http://192.168.137.23:49161/
 
 ### Automated testing
+Install mocha and chai
+```
+npm install mocha chai --save-dev
+```
+
+Set test runner in package.json
+```
+"test": "mocha || true"
+```
+
+The complete code of package.json will look like following
+```
+{
+  "name": "my-node-cicd-docker",
+  "version": "1.0.0",
+  "description": "Node app which support cicd and docker",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@192.168.137.86:my-node-cicd-docker.git"
+  },
+  "author": "Laksiri Fernando",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
+  }
+}
+
+```
+
+Add message.js to get a greeting
+```
+module.exports = {
+    helloMessage: function () {
+        return "Hello!";
+    },
+
+    helloWorldMessage: function () {
+        return "Hello World!"
+    }
+}
+```
+
+Add a new folder named test and add a new test spec file messageTest.js
+```
+const assert = require('chai').assert;
+const message = require('../message');
+
+//Results
+helloMessage = message.helloMessage();
+helloWorldMessage = message.helloWorldMessage();
+
+describe('Message', function(){
+    describe ('helloMessage', function () {
+        it('helloMessage should return Hello!', function() {
+            assert.equal(helloMessage, 'Hello!');
+        });
+        it('helloMessage should return string', function() {
+            assert.typeOf(helloMessage, 'string');
+        });
+    });
+    describe ('helloWorldMessage', function() {
+        it('helloWorldMessage should return Hello World!', function() {
+            assert.equal(helloWorldMessage,'Hello World!');
+        });
+        it('sayHelloWorldMessage should return a string', function() {
+            assert.typeOf(helloWorldMessage, 'string');
+        });
+    });
+});
+```
+
+All done. now run test
+```
+npm test
+```
+
+### Configer GOCD
