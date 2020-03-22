@@ -4,6 +4,6 @@ module.exports = {
     },
 
     helloWorldMessage: function () {
-        return "Hello World!"
+        return "Hello World!!"
     }
 }

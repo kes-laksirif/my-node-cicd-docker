@@ -185,9 +185,14 @@ npm test
 
 ### Configer GOCD
 
-To start GOCO
+To start go-server
 ```
 systemctl start go-server
+```
+
+To start go-agent
+```
+service go-agent start
 ```
 
 In browser navigate to 
@@ -222,5 +227,9 @@ For job task
 ```
 npm test
 ```
+Note: To test do some change to source code and commit changes to git repository
 
-
+```
+docker build -t user/my-node-cicd-docker /home/user/laksiri/mydev/fx/my-node-cicd-docker
+docker run -p 49161:8080 -d user/my-node-cicd-docker
+```
