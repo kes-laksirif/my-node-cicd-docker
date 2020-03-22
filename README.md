@@ -221,7 +221,7 @@ Test-and-report
 For job name
 ```
 run-unit-test
-```
+```npm 
 
 For job task
 ```
