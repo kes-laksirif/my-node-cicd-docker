@@ -82,6 +82,22 @@ docker run -p 49161:8080 -d user/my-node-cicd-docker
 Now the node application is running in the docker and accessible via
 http://192.168.137.23:49161/
 
+#### To start stoped docker
+To check available dockers and id
+```
+docker ps -a
+```
+
+To start docker
+```
+docker start <id>
+```
+
+To find running dockers
+```
+docker ps
+```
+
 ### Automated testing
 Install mocha and chai
 ```
@@ -168,3 +184,43 @@ npm test
 ```
 
 ### Configer GOCD
+
+To start GOCO
+```
+systemctl start go-server
+```
+
+In browser navigate to 
+http://<gocd server ip>:8153/go
+
+For material type select
+```
+GIT
+```
+
+For repository name
+```
+/home/git/my-node-cicd-docker.git
+```
+
+For pipeline name
+```
+Automated-Testing
+```
+
+For stage name
+```
+Test-and-report
+```
+
+For job name
+```
+run-unit-test
+```
+
+For job task
+```
+npm test
+```
+
+
