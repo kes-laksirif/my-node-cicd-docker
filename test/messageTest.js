@@ -15,8 +15,8 @@ describe('Message', function(){
         });
     });
     describe ('helloWorldMessage', function() {
-        it('helloWorldMessage should return Hello World!!!', function() {
-            assert.equal(helloWorldMessage,'Hello World!!!');
+        it('helloWorldMessage should return Hello World!!', function() {
+            assert.equal(helloWorldMessage,'Hello World!!');
         });
         it('sayHelloWorldMessage should return a string', function() {
             assert.typeOf(helloWorldMessage, 'string');
