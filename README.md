@@ -196,7 +196,7 @@ service go-agent start
 ```
 
 In browser navigate to 
-http://<gocd server ip>:8153/go
+http://192.168.137.214:8153/go
 
 For material type select
 ```
@@ -230,6 +230,7 @@ npm test
 Note: To test do some change to source code and commit changes to git repository
 
 ```
+docker rm -v $(docker ps -a -q)
 docker build -t user/my-node-cicd-docker /home/user/laksiri/mydev/fx/my-node-cicd-docker
 docker run -p 49161:8080 -d user/my-node-cicd-docker
 ```
